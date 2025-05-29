@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       <TopBar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
       <div style={{ display: 'flex', height: 'calc(100vh - 60px)' }}>
         <Sidebar isOpen={sidebarOpen} />
-        <main style={{ flex: 1, padding: '20px', background: '#f9f9f9', overflowY: 'auto' }}>
+        <main style={{ flex: 1, padding: '5px', background: '#f9f9f9', overflowY: 'auto' }}>
           {children}
         </main>
       </div>

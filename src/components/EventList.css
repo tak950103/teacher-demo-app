@@ -1,0 +1,108 @@
+.event-list {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 14px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* 3列表示用 */
+.event-list.three-columns {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.event-date-column {
+  width: 50;
+  font-size: 16px;
+  text-align: left;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 3px;
+}
+
+.no-events-text {
+  font-size: 16px;
+  text-align: left;
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 3px;
+}
+
+/* イベントのセクション（グループ、自分） */
+.event-section {
+  flex: 1;
+  max-height: 150px;
+  padding-right: 5px;
+  min-width: 160px;
+}
+
+.event-section.shared {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  min-width: 320px;
+}
+
+/* ヘッダー共通 */
+.section-header {
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.section-subtitle {
+  font-size: 13px;
+  font-weight: bold;
+  color: #555;
+  margin-top: 2px;
+}
+
+/* 区切り線 */
+.section-header hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 6px 0 0px;
+}
+
+/* ラベルリスト */
+.event-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.event-list li {
+  margin-bottom: 8px;
+}
+
+.add-schedule-button {
+  margin-top: 8px;
+  font-size: 14px;
+  padding: 4px 10px;
+  background-color: #277fbf;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-schedule-button:hover {
+  background-color: #1b6699;
+}
+
+.event-list.no-events {
+  display: flex;
+  flex-direction: column;
+}

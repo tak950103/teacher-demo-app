@@ -1,0 +1,111 @@
+.calendar-view {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.calendar-view table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.calendar-view th,
+.calendar-view td {
+  border: 1px solid #ccc;
+  text-align: left;
+  vertical-align: top;
+  padding: 6px;
+  height: 80px;
+  position: relative;
+}
+
+.calendar-view th {
+  height: 30px; /* 狭くする */
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+  background-color: #f0f0f0; /* 平日の背景色 */
+}
+
+.calendar-view th.narrow,
+.calendar-view td.narrow {
+  width: 100px;
+  font-weight: bold;
+}
+
+.calendar-view th:nth-child(1), /* 日曜 */
+.calendar-view td:nth-child(1) {
+  background-color: #ffecec; /* 薄い赤 */
+}
+
+.calendar-view th:nth-child(7), /* 土曜 */
+.calendar-view td:nth-child(7) {
+  background-color: #ecf3ff; /* 薄い青 */
+}
+
+.calendar-view td {
+  height: 100px;
+  position: relative;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.calendar-view td.selected {
+  background-color: #f0f8ff;
+}
+
+.date-label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.event-label {
+  display: block;
+  font-size: 12px;
+  padding: 2px 4px;
+  margin: 2px 0;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.event-label.red {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.event-label.blue {
+  background-color: #3498db;
+  color: white;
+}
+
+.event-label.orange {
+  background-color: #f39c12; /* 明るめのオレンジ */
+}
+
+.event-label.green {
+  background-color: #27ae60; /* 落ち着いた緑 */
+}
+
+.event-label.yellow {
+    background-color: #f1c40f;
+}
+
+.event-label.purple {
+    background-color: #9b59b6;
+}
+
+.event-label.white {
+  background-color: #bdc3c7;
+  color: black;
+}
+
+.date-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.calendar-cell.selected {
+  background-color: #e6f2ff;
+}

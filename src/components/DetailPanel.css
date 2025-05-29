@@ -1,0 +1,50 @@
+.detail-panel {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.detail-panel dl {
+  margin: 0;
+}
+
+.detail-panel dt {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.detail-panel dd {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.detail-panel input {
+  width: 100%;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.detail-panel .memo-readonly input[readonly] {
+  height: 80px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.detail-panel button {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.detail-panel button:hover {
+  background-color: #2980b9;
+}

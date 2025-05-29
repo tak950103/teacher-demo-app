@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Timetable from '../components/Timetable';
 import DetailPanel from '../components/DetailPanel';
+import TodoList from '../components/TodoList';
 import { useState } from 'react';
 
 export default function PersonalPage() {
@@ -16,8 +17,13 @@ export default function PersonalPage() {
         <div style={styles.left}>
           <Timetable onEventClick={handleEventClick} />
         </div>
-        <div style={{ flex: 1 }}>
+        <div style={styles.rightSection}>
+          <div style={styles.detailBox}>
             <DetailPanel selectedEvent={selectedEvent} />
+          </div>
+          <div style={styles.todoBox}>
+            <TodoList />
+          </div>
         </div>
       </div>
     </Layout>
@@ -28,22 +34,32 @@ const styles = {
   container: {
     display: 'flex',
     gap: '20px',
-    height: '100%'
+    height: '100%',
+    padding: '20px'
   },
   left: {
-    flex: 2,
+    flex: 2.4,
     overflow: 'auto'
   },
-  right: {
+  rightSection: {
     flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '20px',
+    height: '100%'
+  },
+  detailBox: {
     background: '#fff',
     border: '1px solid #ccc',
     borderRadius: '8px',
     padding: '20px',
     height: 'fit-content'
   },
-  detailBox: {
-    fontSize: '14px',
-    color: '#333'
+  todoBox: {
+    background: '#fff',
+    border: '1px solid #ccc',
+    borderRadius: '8px',
+    padding: '20px',
+    height: 'fit-content'
   }
 };

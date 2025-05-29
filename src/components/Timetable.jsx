@@ -2,7 +2,7 @@ import './Timetable.css';
 import React from 'react';
 
 const days = ['月', '火', '水', '木', '金', '土'];
-const dates = ['10月1日', '10月2日', '10月3日', '10月4日', '10月5日', '10月6日'];
+const dates = ['9月29日', '9月30日', '10月1日', '10月2日', '10月3日', '10月4日'];
 const periods = [1, 2, 3, 4, 5, 6];
 
 const sampleEvents = [
@@ -42,15 +42,14 @@ export default function Timetable({ onEventClick }) {
             <th>お知らせ</th>
             {days.map((_, i) => (
               <td key={i} className="announcement-cell">
-                {i === 1 && renderEvent(sampleEvents[2]) /* 10/2 研修（白） */}
-                {i === 2 && (
+                {i === 3 && renderEvent(sampleEvents[2]) /* 10/2 研修（白） */}
+                {i === 4 && (
                   <>
-                    {renderEvent(sampleEvents[0])} {/* 職員会議（赤） */}
-                    <br />
-                    {renderEvent(sampleEvents[1])} {/* 運動会（青） */}
+                    {renderEvent(sampleEvents[1])} 
+                    {renderEvent(sampleEvents[3])} 
                   </>
                 )}
-                {i === 3 && renderEvent(sampleEvents[3]) /* 学年会議（青） */}
+                {i === 2 && renderEvent(sampleEvents[0]) /* 学年会議（青） */}
               </td>
             ))}
           </tr>

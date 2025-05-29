@@ -1,14 +1,16 @@
 .timetable {
-  overflow-x: auto;
+  overflow: auto;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 10px;
+  height: calc(100vh - 120px);
 }
 
 .timetable table {
   border-collapse: collapse;
   width: 100%;
+  height: calc(100vh - 120px);
   table-layout: fixed;
   font-size: 14px;
   color: #333;
@@ -17,7 +19,7 @@
 .timetable th,
 .timetable td {
   border: 1px solid #999;
-  padding: 8px;
+  padding: 5px;
   text-align: center;
   vertical-align: middle;
 }
@@ -27,11 +29,34 @@
   font-weight: bold;
 }
 
+.timetable th:first-child,
+.timetable td:first-child {
+    width: 40px;
+}
+
+.timetable th:nth-child(7),
+.timetable td:nth-child(7) {
+    width: 60px;
+}
+
+.timetable th:nth-child(2),
+.timetable td:nth-child(2),
+.timetable th:nth-child(3),
+.timetable td:nth-child(3),
+.timetable th:nth-child(4),
+.timetable td:nth-child(4),
+.timetable th:nth-child(5),
+.timetable td:nth-child(5),
+.timetable th:nth-child(6),
+.timetable td:nth-child(6) {
+  width: 115px;
+}
+
 .announcement-row td {
   background-color: #f0f8ff;
   white-space: normal;
   text-align: left;
-  padding: 6px;
+  padding: 4px;
 }
 
 .event-label {
@@ -45,12 +70,12 @@
 
 .event-label.red {
   background-color: #f7b0b0;
-  color: #800000;
+  color: white;
 }
 
 .event-label.blue {
   background-color: #b0d6ff;
-  color: #004080;
+  color: white;
 }
 
 .event-label.white {
@@ -71,7 +96,7 @@
   border: none;
   background: transparent;
   font-size: 14px;
-  padding: 4px;
+  padding: 2px;
   resize: none;
   box-sizing: border-box;
 }
@@ -84,7 +109,7 @@
 }
 
 .subject-cell {
-  height: 25px;
+  height: 20px;
   background-color: #f0f0f0;
   padding: 0;
 }
@@ -94,14 +119,14 @@
 }
 
 .memo-cell {
-  height: 60px;
+  height: 50px;
   background-color: #fff;
   vertical-align: top;
   padding: 0;
 }
 
 .memo-row {
-  height: 30px;
+  height: 50px;
   background-color: #f0f0f0;
   font-style: italic;
   color: #666;
