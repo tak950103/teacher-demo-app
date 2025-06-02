@@ -2,7 +2,7 @@
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
+  padding: 15px;
   font-size: 14px;
 }
 
@@ -12,7 +12,6 @@
 
 .detail-panel dt {
   font-weight: bold;
-  margin-top: 10px;
 }
 
 .detail-panel dd {
@@ -21,6 +20,14 @@
 }
 
 .detail-panel input {
+  width: 100%;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.detail-panel select {
   width: 100%;
   padding: 6px;
   font-size: 14px;

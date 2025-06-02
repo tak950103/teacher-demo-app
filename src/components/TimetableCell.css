@@ -1,0 +1,23 @@
+.timetable-cell {
+  padding: 0;
+  width: 80px;
+  text-align: center;
+}
+
+.timetable-cell select {
+  width: 100%;
+  height: 38px;
+  font-size: 15px;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fefefe;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease;
+}
+
+.timetable-cell select:focus {
+  outline: none;
+  border-color: #77aa55;
+  box-shadow: 0 0 0 2px rgba(119, 170, 85, 0.2);
+}

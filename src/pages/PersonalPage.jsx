@@ -19,7 +19,10 @@ export default function PersonalPage() {
         </div>
         <div style={styles.rightSection}>
           <div style={styles.detailBox}>
-            <DetailPanel selectedEvent={selectedEvent} />
+            <DetailPanel 
+              selectedEvent={selectedEvent}
+              editable={false}
+            />
           </div>
           <div style={styles.todoBox}>
             <TodoList />

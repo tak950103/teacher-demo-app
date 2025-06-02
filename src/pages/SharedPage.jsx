@@ -26,12 +26,14 @@ export default function SharedPage() {
     { title: '□□提出', date: '2025-10-24', group: '1年部', author: '鈴木一郎', color: 'orange' },
     { title: '××締め切り', date: '2025-10-21', group: '2年部', author: '木村二郎', color: 'green' },
     { title: '校外学習', date: '2025-10-23', group: '2年部', author: '木村二郎', color: 'green' },
-    { title: '運動会準備', date: '2025-10-10', start: '15:30', end: '17:00', group: '体育部', author: '山田花子', color: 'yellow' },
+    { title: '運動会打合せ', date: '2025-10-10', start: '15:30', end: '17:00', group: '体育部', author: '山田花子', color: 'yellow' },
+    { title: '〇〇締切', date: '2025-10-15', group: '体育部', author: '山田花子', color: 'yellow' },
+    { title: '資料作成', date: '2025-10-20', group: '体育部', author: '山田花子', color: 'yellow' },
     { title: '社会見学', date: '2025-10-03', start: '09:00', end: '15:00', group: '4年部', author: '木下優子', color: 'purple' },
   ]);
   const [selectedDate, setSelectedDate] = useState('2025-10-01');
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [selectedGroups, setSelectedGroups] = useState(['全職員', '3年部']);
+  const [selectedGroups, setSelectedGroups] = useState(['全職員', '3年部', '体育部']);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDateClick = (dateStr) => {
@@ -59,11 +61,26 @@ export default function SharedPage() {
     }, 0); // setStateが同期されないことへの対策
     };
 
-  const handleSaveEvent = (newEvent) => {
-    // 保存処理（ローカルデモ用）
-    console.log('保存:', newEvent);
-    setIsModalOpen(false);
-  };
+  const handleSaveEvent = (updatedEvent) => {
+    // 既存イベントを更新（新規 or 既存）
+    setEvents(prevEvents => {
+        const index = prevEvents.findIndex(ev =>
+        ev.date === updatedEvent.date && ev.title === selectedEvent?.title
+        );
+
+        if (index !== -1) {
+        // 編集 → 該当イベントを置き換える
+        const newEvents = [...prevEvents];
+        newEvents[index] = updatedEvent;
+        return newEvents;
+        } else {
+        // 新規作成 → 末尾に追加
+        return [...prevEvents, updatedEvent];
+        }
+    });
+
+    setSelectedEvent(updatedEvent); // 表示も更新
+    };
 
   //  選択中の日付＋グループに一致するイベントだけ抽出
   const filteredEvents = events.filter(
@@ -101,7 +118,7 @@ export default function SharedPage() {
         <div style={styles.right}>
           <DetailPanel
             selectedEvent={selectedEvent}
-            editable
+            editable={true}
             onSave={handleSaveEvent}
           />
         </div>

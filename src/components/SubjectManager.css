@@ -1,0 +1,98 @@
+.subject-manager {
+  margin-top: 70px;
+  margin-left: 30px;
+  margin-right: 60px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  height: 480px;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+.subject-manager h3 {
+  font-size: 16px;
+  color: #2f4f2f;
+  margin: 0 0 10px 10px;
+  padding-left: 4px;
+  align-self: flex-start;
+}
+
+.subject-list {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.subject-item {
+  display: flex;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.subject-name {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  padding-left: 6px;
+}
+
+.subject-manager ul {
+  padding: 0;
+  margin: 3px;
+  list-style: none;
+}
+
+.subject-actions {
+  display: flex;
+  gap: 10px;
+  padding-right: 8px; /* ← 右端が詰まらないように */
+}
+
+.subject-actions svg {
+  cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.subject-actions svg:hover {
+  color: #1a73e8;
+}
+
+.subject-input-row {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.subject-input-row input {
+  flex: 1;
+  height: 36px;
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.subject-input-row button {
+  height: 36px;
+  padding: 0 14px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.subject-input-row button:hover {
+  background-color: #155ab3;
+}

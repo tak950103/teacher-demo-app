@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import './DetailPanel.css';
 
+const groups = [
+  { label: '自分', color: 'gray' },
+  { label: '全職員', color: 'red' },
+  { label: '1年部', color: 'orange' },
+  { label: '2年部', color: 'green' },
+  { label: '3年部', color: 'blue' },
+  { label: '4年部', color: 'purple' },
+  { label: '5年部', color: 'pink' },
+  { label: '体育部', color: 'yellow' },
+  { label: '生徒指導部', color: 'teal'},
+  { label: '研究部', color: 'brown' }
+];
+
 export default function DetailPanel({ selectedEvent, editable = false, onSave }) {
   const isNew = !selectedEvent;
-  const [isEditMode, setIsEditMode] = useState(isNew || editable);
+  const [isEditMode, setIsEditMode] = useState(false);
   const [form, setForm] = useState({
     title: '',
     start: '',
@@ -28,7 +41,7 @@ export default function DetailPanel({ selectedEvent, editable = false, onSave })
         attachment: '',
         author: ''
       });
-      setIsEditMode(true);
+      setIsEditMode(editable);
     }
   }, [selectedEvent, editable]);
 
@@ -39,7 +52,12 @@ export default function DetailPanel({ selectedEvent, editable = false, onSave })
 
   const handleSave = () => {
     if (onSave) {
-      onSave(form);
+      const selectedGroup = groups.find(g => g.label === form.group);
+      const updatedForm = {
+      ...form,
+      color: selectedGroup?.color || 'gray'  // fallback
+    };
+      onSave(updatedForm);
     }
     setIsEditMode(false);
   };
@@ -48,13 +66,13 @@ export default function DetailPanel({ selectedEvent, editable = false, onSave })
 
   return (
     <div className="detail-panel">
-      <div style={{ textAlign: 'right', marginBottom: 8 }}>
-        {!isNew && (
+      <div style={{ textAlign: 'right' }}>
+        {!isNew && editable && (
           <button onClick={() => setIsEditMode(!isEditMode)}>
             {isEditMode ? 'キャンセル' : '編集'}
           </button>
         )}
-        {isEditMode && (
+        {isEditMode && editable && (
           <button onClick={handleSave} style={{ marginLeft: 8 }}>
             保存
           </button>
@@ -92,13 +110,25 @@ export default function DetailPanel({ selectedEvent, editable = false, onSave })
         </dd>
 
         <dt>グループ</dt>
-        <dd>
-          <input
+        <dd className="group-select">
+        {isEditMode ? (
+            <select
             name="group"
             value={form.group}
             onChange={handleChange}
-            readOnly={!isEditMode}
-          />
+            >
+            <option value="">-- 選択してください --</option>
+            {groups.map((g) => (
+                <option key={g.label} value={g.label}>{g.label}</option>
+            ))}
+            </select>
+        ) : (
+            <input
+            name="group"
+            value={form.group}
+            readOnly
+            />
+        )}
         </dd>
 
         <dt>メモ</dt>

@@ -20,7 +20,9 @@ export default function EventList({ events, selectedDate, onEventClick, onAdd })
     return (
         <div className="event-list no-events">
             <div className="no-events-text"><strong>{formatDate(selectedDate)}</strong>の予定はありません。</div>
-            <button className="add-schedule-button" onClick={onAdd}>
+            <button className="add-schedule-button" onClick={onAdd}
+              style={{ marginLeft: "3px" }}
+            >
             新規作成
             </button>
         </div>
@@ -34,7 +36,11 @@ export default function EventList({ events, selectedDate, onEventClick, onAdd })
         <div className="event-list-header">
           <strong>{formatDate(selectedDate)}</strong>
         </div>
-        <button className="add-schedule-button" onClick={onAdd}>
+        <button className="add-schedule-button" onClick={onAdd}
+          style={{
+            marginTop: "6px",
+          }}
+        >
             新規作成
         </button>
       </div>

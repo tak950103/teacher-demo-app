@@ -26,11 +26,17 @@
   padding-left: 3px;
 }
 
+.event-list.no-events {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px; /* 日付とボタンの間の余白を少しだけ */
+  min-height: 150px; /* 他とバランスを取る場合は指定 */
+}
+
 .no-events-text {
   font-size: 16px;
-  text-align: left;
-  margin-top: 0;
-  padding-top: 0;
+  margin: 0;
   padding-left: 3px;
 }
 
@@ -87,7 +93,7 @@
 }
 
 .add-schedule-button {
-  margin-top: 8px;
+  margin: 0;
   font-size: 14px;
   padding: 4px 10px;
   background-color: #277fbf;
