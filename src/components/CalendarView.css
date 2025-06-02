@@ -1,9 +1,15 @@
 .calendar-view {
     background-color: #fff;
     padding: 20px;
+    height: 100%;        /* これが必要！ */
+    box-sizing: border-box;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .calendar-view table {
+  height: 100%;
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
@@ -30,7 +36,6 @@
 
 .calendar-view th.narrow,
 .calendar-view td.narrow {
-  width: 100px;
   font-weight: bold;
 }
 
@@ -45,7 +50,6 @@
 }
 
 .calendar-view td {
-  height: 100px;
   position: relative;
   cursor: pointer;
   vertical-align: top;
@@ -53,6 +57,11 @@
 
 .calendar-view td.selected {
   background-color: #f0f8ff;
+}
+
+.calendar-view tbody {
+  display: table-row-group;
+  height: 100%;
 }
 
 .date-label {
@@ -108,4 +117,15 @@
 
 .calendar-cell.selected {
   background-color: #e6f2ff;
+}
+
+.calendar-selectors {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.calendar-selectors select {
+  padding: 6px;
+  font-size: 14px;
 }

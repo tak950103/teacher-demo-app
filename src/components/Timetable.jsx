@@ -25,6 +25,15 @@ export default function Timetable({ onEventClick }) {
   return (
     <div className="timetable">
       <table>
+        <colgroup>
+          <col style={{ width: '80px' }} />
+          <col style={{ width: '20%' }} />
+          <col style={{ width: '20%' }} />
+          <col style={{ width: '20%' }} />
+          <col style={{ width: '20%' }} />
+          <col style={{ width: '20%' }} />
+          <col style={{ width: '15%' }} />
+        </colgroup>
         <thead>
           <tr>
             <th></th>
@@ -110,7 +119,7 @@ export default function Timetable({ onEventClick }) {
                         (p === 2 && i === 0 && '水の変化') ||
                         (p === 2 && i === 1 && '都道府県クイズ') ||
                         (p === 2 && i === 2 && '算数プリント') ||
-                        (p === 2 && i === 3 && 'P110⑴~') ||
+                        (p === 2 && i === 3 && 'P110⑴～') ||
                         (p === 3 && i === 0 && 'リコーダー') ||
                         (p === 3 && i === 3 && '運動会練習') ||
                         (p === 4 && i === 1 && '水彩画') ||

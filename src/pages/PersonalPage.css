@@ -1,0 +1,61 @@
+.personal-container {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.personal-left {
+  flex: 2.4;
+  overflow: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.personal-right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.personal-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+}
+
+/* ------- レスポンシブ対応 -------- */
+@media (max-width: 1024px) {
+  .personal-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .personal-left,
+  .personal-right-section {
+    width: 100%;
+  }
+
+  .personal-box {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .personal-container {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .personal-box {
+    padding: 12px;
+  }
+
+  .personal-right-section {
+    gap: 12px;
+  }
+}

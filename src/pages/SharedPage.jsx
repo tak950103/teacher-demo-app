@@ -4,6 +4,7 @@ import GroupSelector from '../components/GroupSelector';
 import EventList from '../components/EventList';
 import DetailPanel from '../components/DetailPanel';
 import TodoModal from '../components/TodoModal'; // 既存の再利用
+import './SharedPage.css';
 import { useState } from 'react';
 
 
@@ -91,18 +92,18 @@ export default function SharedPage() {
 
   return (
     <Layout>
-      <div style={styles.container}>
-        <div style={styles.left}>
-          <div style={styles.upper}>
+      <div className="shared-container">
+        <div className="shared-left">
+          <div className="shared-upper">
             <CalendarView
-                events={events}
-                selectedDate={selectedDate}
-                selectedGroups={selectedGroups}
-                onDateClick={handleDateClick}
-                onEventClick={handleEventClick}
+              events={events}
+              selectedDate={selectedDate}
+              selectedGroups={selectedGroups}
+              onDateClick={handleDateClick}
+              onEventClick={handleEventClick}
             />
           </div>
-          <div style={styles.bottomRow}>
+          <div className="shared-bottom-row">
             <GroupSelector
               selectedGroups={selectedGroups}
               onChange={setSelectedGroups}
@@ -115,7 +116,7 @@ export default function SharedPage() {
             />
           </div>
         </div>
-        <div style={styles.right}>
+        <div className="shared-right">
           <DetailPanel
             selectedEvent={selectedEvent}
             editable={true}

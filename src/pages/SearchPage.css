@@ -81,3 +81,37 @@
   padding: 20px;
   background-color: #fff;
 }
+
+@media (max-width: 1024px) {
+  .search-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  .detail-panel-wrapper {
+    width: 100%;
+  }
+
+  .search-filters {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .search-filters select,
+  .search-filters input[type="text"] {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .pagination button {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+}

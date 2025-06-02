@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import Timetable from '../components/Timetable';
 import DetailPanel from '../components/DetailPanel';
 import TodoList from '../components/TodoList';
+import './PersonalPage.css';
 import { useState } from 'react';
 
 export default function PersonalPage() {
@@ -13,18 +14,18 @@ export default function PersonalPage() {
 
   return (
     <Layout>
-      <div style={styles.container}>
-        <div style={styles.left}>
+      <div className="personal-container">
+        <div className="personal-left">
           <Timetable onEventClick={handleEventClick} />
         </div>
-        <div style={styles.rightSection}>
-          <div style={styles.detailBox}>
+        <div className="personal-right-section">
+          <div className="personal-box">
             <DetailPanel 
               selectedEvent={selectedEvent}
               editable={false}
             />
           </div>
-          <div style={styles.todoBox}>
+          <div className="personal-box">
             <TodoList />
           </div>
         </div>
@@ -32,37 +33,3 @@ export default function PersonalPage() {
     </Layout>
   );
 }
-
-const styles = {
-  container: {
-    display: 'flex',
-    gap: '20px',
-    height: '100%',
-    padding: '20px'
-  },
-  left: {
-    flex: 2.4,
-    overflow: 'auto'
-  },
-  rightSection: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '20px',
-    height: '100%'
-  },
-  detailBox: {
-    background: '#fff',
-    border: '1px solid #ccc',
-    borderRadius: '8px',
-    padding: '20px',
-    height: 'fit-content'
-  },
-  todoBox: {
-    background: '#fff',
-    border: '1px solid #ccc',
-    borderRadius: '8px',
-    padding: '20px',
-    height: 'fit-content'
-  }
-};

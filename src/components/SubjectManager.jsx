@@ -13,8 +13,8 @@ export default function SubjectManager({ subjects, onAdd, onEdit, onDelete }) {
           <li key={idx} className="subject-item">
             <div className="subject-name">{subj}</div>
             <div className="subject-actions">
-              <FaPen onClick={() => onEdit(subj)} />
-              <FaTrashAlt onClick={() => onDelete(subj)} />
+              <FaPen style={{ color: "#1a73e8"}} onClick={() => onEdit(subj)} />
+              <FaTrashAlt style={{ color: "#e57373"}} onClick={() => onDelete(subj)} />
             </div>
           </li>
         ))}

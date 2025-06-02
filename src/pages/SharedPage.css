@@ -1,0 +1,75 @@
+.shared-container {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 60px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.shared-left {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.shared-upper {
+  flex: 8;
+  min-height: 0; /* Safari対応 */
+  overflow: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.shared-right {
+  flex: 1.5;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+}
+
+/* GroupSelector と EventList を横並びに */
+.shared-bottom-row {
+  flex: 2;
+  min-height: 0;
+  display: flex;
+  gap: 20px;
+}
+
+/* ------- レスポンシブ対応 -------- */
+@media (max-width: 1024px) {
+  .shared-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .shared-left,
+  .shared-right {
+    width: 100%;
+  }
+
+  .shared-right {
+    padding: 16px;
+  }
+
+  .shared-bottom-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .shared-container {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .shared-right {
+    padding: 12px;
+  }
+
+  .shared-bottom-row {
+    gap: 12px;
+  }
+}

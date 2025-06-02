@@ -8,6 +8,9 @@
   gap: 40px;
   align-items: flex-start;
   position: relative;
+  height: (100% - 20px);
+  overflow-y: auto;
+  flex: 6.5;
 }
 
 /* 3列表示用 */
@@ -18,7 +21,7 @@
 }
 
 .event-date-column {
-  width: 50;
+  width: auto;
   font-size: 16px;
   text-align: left;
   margin-top: 0;
@@ -31,7 +34,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 6px; /* 日付とボタンの間の余白を少しだけ */
-  min-height: 150px; /* 他とバランスを取る場合は指定 */
 }
 
 .no-events-text {
@@ -42,19 +44,19 @@
 
 /* イベントのセクション（グループ、自分） */
 .event-section {
-  flex: 1;
+  flex: 4;
   max-height: 150px;
   padding-right: 5px;
-  min-width: 160px;
+  min-width: 0;
 }
 
 .event-section.shared {
+  flex: 6;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 5px;
-  max-height: 150px;
   overflow-y: auto;
-  min-width: 320px;
+  min-width: 0;
 }
 
 /* ヘッダー共通 */
@@ -94,14 +96,15 @@
 
 .add-schedule-button {
   margin: 0;
-  font-size: 14px;
-  padding: 4px 10px;
+  font-size: 0.8rem;
+  padding: 8px;
   background-color: #277fbf;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
 .add-schedule-button:hover {

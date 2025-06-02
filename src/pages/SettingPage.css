@@ -22,6 +22,62 @@
 
 /* ヘッダー */
 .setting-timetable th {
+  background-color: #d8eecf;
+  color: #2f4f2f;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 時間行（1〜6限）とセル */
+.setting-timetable td {
+  padding: 10px;
+  text-align: center;
+  height: 52px;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  background-color: #fff;
+}
+
+/* 左端の1〜6 */
+.setting-timetable td:first-child {
+  font-weight: bold;
+  background-color: #fff;
+  color: #333;
+  width: 32px;
+}
+
+/* ホバー時の行全体 */
+.setting-timetable tr:hover td {
+  background-color: #f6fdf6;
+}
+
+.setting-page {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.setting-timetable-container {
+  flex: 1.2;
+}
+
+.setting-timetable {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ヘッダー */
+.setting-timetable th {
   background-color: #cce5cc;
   color: #2f4f2f;
   font-weight: 600;
@@ -52,4 +108,33 @@
 /* ホバー時の行全体 */
 .setting-timetable tr:hover td {
   background-color: #f6fdf6;
+}
+
+@media (max-width: 1024px) {
+  .setting-page {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .setting-timetable-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .setting-page {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .setting-timetable th {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+
+  .setting-timetable td {
+    padding: 8px;
+    height: 44px;
+    min-width: 60px;
+  }
 }

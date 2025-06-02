@@ -1,42 +1,36 @@
+import './Sidebar.css';
 import { FaUser, FaShareAlt, FaSearch, FaCog } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Sidebar({ isOpen }) {
+  const location = useLocation();
+
+  const menuItems = [
+    { path: '/personal', icon: <FaUser />, label: '個人ページ' },
+    { path: '/shared', icon: <FaShareAlt />, label: '共有ページ' },
+    { path: '/search', icon: <FaSearch />, label: '検索' },
+    { path: '/settings', icon: <FaCog />, label: '設定' },
+  ];
+
   return (
-    <aside style={{ ...styles.sidebar, width: isOpen ? '180px' : '60px' }}>
+    <aside
+      className="sidebar"
+      style={{ width: isOpen ? '180px' : '60px' }}
+    >
       <nav>
-        <ul style={styles.ul}>
-          <li><Link to="/personal" style={styles.link}><FaUser /> {isOpen && '個人ページ'}</Link></li>
-          <li><Link to="/shared" style={styles.link}><FaShareAlt /> {isOpen && '共有ページ'}</Link></li>
-          <li><Link to="/search" style={styles.link}><FaSearch /> {isOpen && '検索'}</Link></li>
-          <li><Link to="/settings" style={styles.link}><FaCog /> {isOpen && '設定'}</Link></li>
+        <ul>
+          {menuItems.map((item) => (
+            <li key={item.path}>
+              <Link
+                to={item.path}
+                className={location.pathname === item.path ? 'active' : ''}
+              >
+                {item.icon} {isOpen && <span>{item.label}</span>}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>
   );
 }
-
-const styles = {
-  sidebar: {
-    backgroundColor: '#eee',
-    padding: '20px 10px',
-    height: 'calc(100vh - 60px)',
-    boxSizing: 'border-box',
-    transition: 'width 0.3s ease',
-    overflow: 'hidden'
-  },
-  ul: {
-    listStyle: 'none',
-    padding: 0,
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '15px'
-  },
-  link: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px',
-    color: '#676767',
-    textDecoration: 'none'
-  }
-};
