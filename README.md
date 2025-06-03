@@ -8,6 +8,7 @@ React(Vite)を用いてフロントエンドの構築を行っており、バッ
 ## 主な機能
 
 ### 個人ページ `/personal`
+![PersonalPage](./screenshots/PersonalPage.png)
 - 時間割形式の予定表（Timetable）を表示
   - お知らせ欄(`announcement-row`)は行事をラベル形式で表示。クリックで詳細パネルに表示。
   - 科目(`subject-cell`)と授業内容メモ(`memo-cell`)はinputとtextareaでそれぞれ編集可能。
@@ -20,6 +21,7 @@ React(Vite)を用いてフロントエンドの構築を行っており、バッ
   - 各ボタンから、モーダルが表示され、新規追加や編集が可能。
   
 ### 共有ページ `/shared`
+![SharedPage](./screenshots/SharedPage.png)
 - 月別カレンダー（CalendarView）の表示
   - 年月選択により、指定された月のカレンダーを表示
   - カレンダー内に予定ラベルを配置。クリックで詳細パネルへ。
@@ -34,10 +36,12 @@ React(Vite)を用いてフロントエンドの構築を行っており、バッ
   - 新規作成・編集が可能。
 
 ### 検索ページ `/search`
+![SearchPage](./screenshots/SearchPage.png)
 - 年・月・キーワードなどで過去の予定を絞り込み検索
 - 表 + 詳細パネルの構成
 
 ### 設定ページ `/settings`
+![Setting](./screenshots/SettingPage.png)
 - 時間割の基本パターン編集
   - 科目マスタ内の項目をプルダウンリストから選択
 - 科目マスタの追加・編集・削除が可能
