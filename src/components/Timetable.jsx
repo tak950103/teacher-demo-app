@@ -51,14 +51,14 @@ export default function Timetable({ onEventClick }) {
             <th>お知らせ</th>
             {days.map((_, i) => (
               <td key={i} className="announcement-cell">
-                {i === 3 && renderEvent(sampleEvents[2]) /* 10/2 研修（白） */}
+                {i === 3 && renderEvent(sampleEvents[2])}
                 {i === 4 && (
                   <>
                     {renderEvent(sampleEvents[1])} 
                     {renderEvent(sampleEvents[3])} 
                   </>
                 )}
-                {i === 2 && renderEvent(sampleEvents[0]) /* 学年会議（青） */}
+                {i === 2 && renderEvent(sampleEvents[0])}
               </td>
             ))}
           </tr>
